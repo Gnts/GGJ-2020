@@ -23,7 +23,6 @@ public class Flamethrow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             Throw();
-
         }
     }
 
