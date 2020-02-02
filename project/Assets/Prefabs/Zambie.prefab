@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 460344600815368686}
   - component: {fileID: 460344600805593860}
   - component: {fileID: 1769301811800468888}
+  - component: {fileID: -4595157227198328623}
   m_Layer: 0
   m_Name: Zambie
   m_TagString: Zamby
@@ -423,6 +424,18 @@ CapsuleCollider:
   m_Height: 2.09
   m_Direction: 1
   m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!114 &-4595157227198328623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460344600815038716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837c3a80ffd8128458ef30a6c1582146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &460344600815040000
 GameObject:
   m_ObjectHideFlags: 0
