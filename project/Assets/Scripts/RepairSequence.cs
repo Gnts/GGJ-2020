@@ -34,6 +34,7 @@ public class RepairSequence : MonoBehaviour
     int lives;
 
     string[] keys = {"Fire1", "Fire2", "Fire3", "Jump"};
+    string[] keyNames = { "Ctrl", "Alt", "Shift", "Space" };
 
     // Start is called before the first frame update
     void Start()
@@ -103,7 +104,7 @@ public class RepairSequence : MonoBehaviour
         seqIndex++;
         nextKey = Random.Range(0, keys.Length);
         nextKeyText.rectTransform.anchoredPosition = new Vector3(Random.RandomRange(-100f, 100f), Random.RandomRange(-100f, 100f), 0);
-        nextKeyText.text = keys[nextKey];
+        nextKeyText.text = keyNames[nextKey];
     }
 
     public void NewGame(){
