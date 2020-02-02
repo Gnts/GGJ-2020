@@ -63,6 +63,7 @@ public class RepairSequence : MonoBehaviour
                     state = State.Waiting;
                     waitTime = 3.0f;
                     score++;
+                    Flamethrow.instance.Throw();
                 }
             } else if (Input.anyKeyDown || targetTime < 0){
                 lives --;
@@ -72,6 +73,7 @@ public class RepairSequence : MonoBehaviour
                 if (lives < 1) {
                     state = State.GameOver;
                     timer.text = "Game Over!";
+                    Officer.instance.Shoot();
                     newGameButton.enabled = true;
                 }
             }
@@ -80,7 +82,7 @@ public class RepairSequence : MonoBehaviour
 
     void NextSequence(){
         state = State.Repairing;
-        targetTime = 5.0f;
+        targetTime = 10.0f;
         seqIndex = 0;
         NextKey();
     }

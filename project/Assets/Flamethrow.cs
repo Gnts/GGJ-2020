@@ -19,16 +19,12 @@ public class Flamethrow : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Throw();
-            _anim.SetTrigger("Shoot");       
-        }
     }
 
     public void Throw()
     {
         Instantiate(dynamo, _transform.position, Quaternion.identity);
+        _anim.SetTrigger("Shoot");       
     }
     
 }
