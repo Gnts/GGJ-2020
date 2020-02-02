@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
-    descriptiveName: 
+    descriptiveName: Control or LM
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left ctrl
@@ -54,7 +54,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: Alt or RM
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -71,7 +71,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire3
-    descriptiveName: 
+    descriptiveName: Shift or MM
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
@@ -87,7 +87,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: 
+    descriptiveName: Space
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space

@@ -25,6 +25,8 @@ public class RepairSequence : MonoBehaviour
     public Text gameOverText;
     public Text nextKeyText;
 
+    public GameObject zambiePrefab;
+
     public State state;
 
     int nextKey;
@@ -93,7 +95,17 @@ public class RepairSequence : MonoBehaviour
         } 
     }
 
+    IEnumerator SpawZombies()
+    {
+        for (int i=0; i< 10; i++)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Instantiate(zambiePrefab, new Vector3(Random.RandomRange(5, 35), -1, Random.RandomRange(50, 90)), Quaternion.Euler(0, 180, 0));
+        }
+    }
+
     void NextSequence(){
+        StartCoroutine(SpawZombies());
         state = State.Repairing;
         targetTime = 10.0f;
         seqIndex = 0;
