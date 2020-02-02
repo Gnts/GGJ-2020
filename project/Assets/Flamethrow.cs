@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flamethrow : MonoBehaviour
 {
     public GameObject dynamo;
+    public GameObject flame;
     public static Flamethrow instance;
     public Transform _transform;
     Animator _anim;
@@ -33,7 +34,10 @@ public class Flamethrow : MonoBehaviour
         var src = GetComponent<AudioSource>();
         src.Stop();
         src.Play();
-
     }
 
+    public void Flame()
+    {
+        flame.SetActive(true);
+    }
 }

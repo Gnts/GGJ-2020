@@ -9,6 +9,7 @@ public class Repairman : MonoBehaviour
     Animator _anim;
     public static Repairman instance;
     static readonly int k_Death = Animator.StringToHash("Death");
+    static readonly int k_TakeHit = Animator.StringToHash("TakeHit");
     public GameObject particles;
 
     void Awake()
@@ -30,4 +31,10 @@ public class Repairman : MonoBehaviour
         _ik.enabled = false;
         particles.SetActive(true);
     }
+
+        public void TakeHit()
+    {
+        _anim.SetTrigger(k_TakeHit);
+    }
+
 }

@@ -39,6 +39,11 @@ public class RepairSequence : MonoBehaviour
     void Start()
     {
         state = State.Start;
+        scoreText.text = "";
+        livesText.text = "";
+        scoreText.text = "";
+        nextKeyText.text = "";
+        newGameButton.GetComponentInChildren<Text>().text = "Play";
     }
 
     // Update is called once per frame
@@ -76,6 +81,12 @@ public class RepairSequence : MonoBehaviour
                     timer.text = "Game Over!";
                     Officer.instance.Shoot();
                     newGameButton.enabled = true;
+                    newGameButton.gameObject.SetActive(true);
+                    newGameButton.GetComponentInChildren<Text>().text = "New Game";
+                }
+                else
+                {
+                    Officer.instance.Hit();
                 }
             }
         } 
@@ -96,14 +107,22 @@ public class RepairSequence : MonoBehaviour
     }
 
     public void NewGame(){
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        newGameButton.enabled = false;
-        state = State.Repairing;
-        score = 0;
-        lives = 3;
+        if (state == State.GameOver)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Flamethrow.instance.Flame();
+            newGameButton.gameObject.SetActive(false);
+            newGameButton.enabled = false;
+            state = State.Repairing;
+            score = 0;
+            lives = 3;
 
-        // Random.InitState()
+            // Random.InitState()
 
-        NextSequence();
+            NextSequence();
+        }
     }
 }

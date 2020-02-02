@@ -6,6 +6,7 @@ public class Officer : MonoBehaviour
 {
     Animator _anim;
     static readonly int k_Shoot = Animator.StringToHash("Shoot");
+    static readonly int k_Hit = Animator.StringToHash("Hit");
     public static Officer instance;
 
     void Awake()
@@ -18,6 +19,12 @@ public class Officer : MonoBehaviour
     {
         _anim.SetTrigger(k_Shoot);
         Repairman.instance.Die();
+    }
+
+    public void Hit()
+    {
+        _anim.SetTrigger(k_Hit);
+        Repairman.instance.TakeHit();
     }
 
     void Update()
