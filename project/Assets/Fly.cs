@@ -35,18 +35,21 @@ public class Fly : MonoBehaviour
         exploded = true;
 
         GetComponent<AudioSource>().Play();
-        var rhs = Physics.SphereCastAll(transform.position, 10f, transform.position, 1f);
+        var rhs = Physics.SphereCastAll(transform.position, 25f, transform.position, 1f);
 
         foreach (var rh in rhs)
         {
             if (rh.collider.gameObject.CompareTag("Zamby"))
             {
-                rh.collider.gameObject.AddComponent<Rigidbody>();
+                if (rh.collider.GetComponent<Rigidbody>() == null)
+                    rh.collider.gameObject.AddComponent<Rigidbody>();
+
                 var rb = rh.collider.gameObject.GetComponent<Rigidbody>();
                 rb.AddForce(rh.collider.transform.position * 50f);
                 rh.collider.GetComponent<Animator>().SetTrigger(k_Death);
             }
         }
         
+        Destroy(gameObject, 3f);
     }
 }

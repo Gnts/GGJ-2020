@@ -19,6 +19,7 @@ public class Officer : MonoBehaviour
     {
         _anim.SetTrigger(k_Shoot);
         Repairman.instance.Die();
+        StartCoroutine(ShootersGonnaShoot());
     }
 
     public void Hit()
@@ -32,7 +33,6 @@ public class Officer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             Shoot();
-            StartCoroutine(ShootersGonnaShoot());
         }
     }
 
@@ -40,6 +40,7 @@ public class Officer : MonoBehaviour
     {
         var src = GetComponent<AudioSource>();
 
+        Debug.Log("Play sounds");
         src.Stop();
         src.Play();
         yield return  new WaitForSeconds(0.3f);
