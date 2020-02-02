@@ -35,8 +35,8 @@ public class RepairSequence : MonoBehaviour
     int score;
     int lives;
 
-    string[] keys = {"Fire1", "Fire2", "Fire3", "Jump"};
-    string[] keyNames = { "Ctrl", "Alt", "Shift", "Space" };
+    string[] keys = {"Fire1", "Fire3", "Jump"};
+    string[] keyNames = { "Ctrl", "Shift", "Space" };
 
     // Start is called before the first frame update
     void Start()
