@@ -21,7 +21,12 @@ public class Flamethrow : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             Throw();
+            var src = GetComponent<AudioSource>();
+            src.Stop();
+            src.Play();
+            
             _anim.SetTrigger("Shoot");       
         }
     }
