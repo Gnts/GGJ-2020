@@ -47,6 +47,8 @@ public class Fly : MonoBehaviour
                 var rb = rh.collider.gameObject.GetComponent<Rigidbody>();
                 rb.AddForce(rh.collider.transform.position * 50f);
                 rh.collider.GetComponent<Animator>().SetTrigger(k_Death);
+
+                Destroy(rh.collider.gameObject, 7f);
             }
         }
         
