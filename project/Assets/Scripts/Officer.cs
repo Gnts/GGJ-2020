@@ -16,5 +16,14 @@ public class Officer : MonoBehaviour
     public void Shoot()
     {
         _anim.SetTrigger(k_Shoot);
+        Repairman.instance.Die();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Shoot();
+        }
     }
 }

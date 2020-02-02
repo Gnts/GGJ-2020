@@ -6589,6 +6589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3d9cb6aaa72124492d6d88db6d5ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 1663575804}
 --- !u!4 &1095498910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 403460, guid: aa05473e4d04e834eb7a29b53251c8cf,
@@ -9549,8 +9550,29 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0d3baa333474e024e9a8d6afb5ebfc5a, type: 2}
+    - target: {fileID: 3508651463223198664, guid: aa05473e4d04e834eb7a29b53251c8cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508651463223434348, guid: aa05473e4d04e834eb7a29b53251c8cf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508651463242893152, guid: aa05473e4d04e834eb7a29b53251c8cf,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa05473e4d04e834eb7a29b53251c8cf, type: 3}
+--- !u!1 &1663575804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3508651463223198664, guid: aa05473e4d04e834eb7a29b53251c8cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1663575803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1672347382
 PrefabInstance:
   m_ObjectHideFlags: 0

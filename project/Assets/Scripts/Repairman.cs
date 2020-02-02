@@ -9,6 +9,7 @@ public class Repairman : MonoBehaviour
     Animator _anim;
     public static Repairman instance;
     static readonly int k_Death = Animator.StringToHash("Death");
+    public GameObject particles;
 
     void Awake()
     {
@@ -20,10 +21,13 @@ public class Repairman : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            _anim.SetTrigger(k_Death);
-            _ik.enabled = false;
-        }
+
+    }
+
+    public void Die()
+    {
+        _anim.SetTrigger(k_Death);
+        _ik.enabled = false;
+        particles.SetActive(true);
     }
 }
