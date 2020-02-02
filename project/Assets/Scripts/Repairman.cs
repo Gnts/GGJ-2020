@@ -20,10 +20,7 @@ public class Repairman : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     public void Die()
     {
@@ -32,9 +29,12 @@ public class Repairman : MonoBehaviour
         particles.SetActive(true);
     }
 
-        public void TakeHit()
+    public void TakeHit()
     {
         _anim.SetTrigger(k_TakeHit);
+        var src = GetComponent<AudioSource>();
+        src.Stop();
+        src.Play();
     }
 
 }

@@ -40,7 +40,6 @@ public class Officer : MonoBehaviour
     {
         var src = GetComponent<AudioSource>();
 
-        Debug.Log("Play sounds");
         src.Stop();
         src.Play();
         yield return  new WaitForSeconds(0.3f);
