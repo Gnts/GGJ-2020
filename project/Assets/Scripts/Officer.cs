@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Officer : MonoBehaviour
@@ -24,6 +25,22 @@ public class Officer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             Shoot();
+            StartCoroutine(ShootersGonnaShoot());
         }
     }
+
+    IEnumerator ShootersGonnaShoot()
+    {
+        var src = GetComponent<AudioSource>();
+
+        src.Stop();
+        src.Play();
+        yield return  new WaitForSeconds(0.3f);
+        src.Stop();
+        src.Play();
+        yield return  new WaitForSeconds(0.3f);
+        src.Stop();
+        src.Play();
+    }
+    
 }

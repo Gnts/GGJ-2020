@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum State
@@ -57,17 +58,17 @@ public class RepairSequence : MonoBehaviour
             timer.text = seqIndex.ToString() +":"+ targetTime.ToString();
 
             if (Input.GetButtonDown(keys[nextKey])) {
-                if(seqIndex < 5) {
+                if(seqIndex < 3) {
                     NextKey();
                 } else  {
                     state = State.Waiting;
-                    waitTime = 3.0f;
+                    waitTime = 2.0f;
                     score++;
                     Flamethrow.instance.Throw();
                 }
             } else if (Input.anyKeyDown || targetTime < 0){
                 lives --;
-                waitTime = 2.0f;
+                waitTime = 1.0f;
                 state = State.Waiting;
 
                 if (lives < 1) {
@@ -95,6 +96,7 @@ public class RepairSequence : MonoBehaviour
     }
 
     public void NewGame(){
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         newGameButton.enabled = false;
         state = State.Repairing;
         score = 0;

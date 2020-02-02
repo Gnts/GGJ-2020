@@ -19,12 +19,21 @@ public class Flamethrow : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Throw();
+
+        }
     }
 
     public void Throw()
     {
         Instantiate(dynamo, _transform.position, Quaternion.identity);
-        _anim.SetTrigger("Shoot");       
+        _anim.SetTrigger("Shoot");
+        var src = GetComponent<AudioSource>();
+        src.Stop();
+        src.Play();
+
     }
-    
+
 }

@@ -34,6 +34,7 @@ public class Fly : MonoBehaviour
         go2.SetActive(true);
         exploded = true;
 
+        GetComponent<AudioSource>().Play();
         var rhs = Physics.SphereCastAll(transform.position, 10f, transform.position, 1f);
 
         foreach (var rh in rhs)
