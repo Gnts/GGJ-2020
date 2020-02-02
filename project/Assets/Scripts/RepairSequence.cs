@@ -110,7 +110,7 @@ public class RepairSequence : MonoBehaviour
     void NextSequence(){
         StartCoroutine(SpawZombies());
         state = State.Repairing;
-        targetTime = 5.0f;
+        targetTime = 3.0f;
         seqIndex = 0;
         NextKey();
     }
