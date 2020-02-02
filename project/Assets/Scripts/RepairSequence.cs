@@ -46,6 +46,7 @@ public class RepairSequence : MonoBehaviour
         livesText.text = "";
         scoreText.text = "";
         nextKeyText.text = "";
+        timer.text = "";
         newGameButton.GetComponentInChildren<Text>().text = "Play";
     }
 
@@ -81,7 +82,9 @@ public class RepairSequence : MonoBehaviour
 
                 if (lives < 1) {
                     state = State.GameOver;
-                    timer.text = "Game Over!";
+                    timer.text = "";
+                    nextKeyText.text = "";
+                    gameOverText.gameObject.SetActive(true);
                     Officer.instance.Shoot();
                     newGameButton.enabled = true;
                     newGameButton.gameObject.SetActive(true);
@@ -100,7 +103,7 @@ public class RepairSequence : MonoBehaviour
         for (int i=0; i< 10; i++)
         {
             yield return new WaitForSeconds(0.5f);
-            Instantiate(zambiePrefab, new Vector3(Random.RandomRange(5, 35), -1, Random.RandomRange(50, 90)), Quaternion.Euler(0, 180, 0));
+            Instantiate(zambiePrefab, new Vector3(Random.RandomRange(5, 25), -1, Random.RandomRange(50, 80)), Quaternion.Euler(0, 180, 0));
         }
     }
 
@@ -120,6 +123,7 @@ public class RepairSequence : MonoBehaviour
     }
 
     public void NewGame(){
+        gameOverText.gameObject.SetActive(false);
         if (state == State.GameOver)
         {
             SceneManager.LoadScene(0);
